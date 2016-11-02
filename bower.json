@@ -1,7 +1,12 @@
 {
-  "name": "",
-  "version": "",
+  "name": "rails-blog-anguar-single-page-sample",
+  "version": "0.0.1",
   "main": "",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  }
 }
