@@ -1,0 +1,31 @@
+var app = angular.module('Blog', ['ui.router', 'ng-token-auth', 'ui.bootstrap', 'ngAnimate']);
+
+app.config(['$stateProvider', '$urlRouterProvider', '$authProvider', function($stateProvider, $urlRouterProvider, $authProvider) {
+  $stateProvider
+  .state({
+    abstract: true,
+    name: "header",
+    templateUrl: "<%= asset_path('abstracts/header.html') %>"
+  })
+
+  .state({
+    name: 'header.home',
+    url: '/',
+    templateUrl: "<%= asset_path('home.html') %>"
+  })
+
+  .state({
+    name: 'header.posts',
+    url: '/posts',
+    templateUrl: "<%= asset_path('posts.html') %>",
+    controller: "PostsCtrl"
+  });
+
+  $urlRouterProvider.otherwise('/');
+
+
+  $authProvider.configure({
+    apiUrl: location.origin,
+    validateOnPageLoad: false
+  });
+}]);

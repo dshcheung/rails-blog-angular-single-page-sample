@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require angular/angular
+//= require angular-ui-router/release/angular-ui-router
+//= require angular-bootstrap/ui-bootstrap-tpls
+//= require angular-animate/angular-animate
+//= require angular-cookie/angular-cookie
+//= require ng-token-auth/dist/ng-token-auth
 //= require jquery/dist/jquery
-//= require jquery-deparam/jquery-deparam
-//= require jquery-cookie/jquery.cookie
-//= require pubsub-js/src/pubsub
-//= require j-toker/dist/jquery.j-toker
 //= require bootstrap/dist/js/bootstrap
+//= require angular/config
 //= require_tree .

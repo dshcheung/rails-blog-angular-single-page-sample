@@ -1,0 +1,25 @@
+app.controller('HeaderCtrl', ['$scope', '$uibModal', '$rootScope', 'UserService', '$auth', function($scope, $uibModal, $rootScope, UserService, $auth){
+  $scope.logout = function () {
+    UserService.logout();
+  };
+
+  $scope.loginModal = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: '<%= asset_path("modals/login_modal.html") %>',
+      controller: 'LoginModalInstanceCtrl'
+    });
+  };
+
+  $scope.signupModal = function () {
+    var modalInstance = $uibModal.open({
+      templateUrl: '<%= asset_path("modals/signup_modal.html") %>',
+      controller: 'SignupModalInstanceCtrl'
+    });
+  };
+
+  var init = function () {
+    $scope.user = UserService.user;
+  };
+
+  init();
+}]);
