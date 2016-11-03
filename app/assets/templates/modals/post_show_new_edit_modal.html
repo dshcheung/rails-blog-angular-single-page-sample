@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="close()"><span >&times;</span></button>
+  <h4 ng-if="isNew() || isEdit()" class="modal-title">
+    <input type="text" ng-model="post.title" placeholder="Title">
+  </h4>
+  <h4 ng-if="isShow()" class="modal-title">{{post.title}}</h4>
+</div>
+
+<div ng-if="isNew() || isEdit()" class="modal-body">
+  <input type="text" ng-model="post.content" placeholder="Content">
+</div>
+<div ng-if="isShow()" class="modal-body">{{post.content}}</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" ng-click="close()">Close</button>
+  <button ng-if="isShow() && isLoggedin()" type="button" class="btn btn-warning" ng-click="toEditMode()">Edit</button>
+  <button ng-if="isEdit()" type="button" class="btn btn-primary" ng-click="updatePost()">Save</button>
+  <button ng-if="isNew()" type="button" class="btn btn-primary" ng-click="createPost()">Create</button>
+</div>

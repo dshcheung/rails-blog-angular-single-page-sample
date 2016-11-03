@@ -15,6 +15,7 @@
 //= require angular-bootstrap/ui-bootstrap-tpls
 //= require angular-animate/angular-animate
 //= require angular-cookie/angular-cookie
+//= require angular-resource/angular-resource
 //= require ng-token-auth/dist/ng-token-auth
 //= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap

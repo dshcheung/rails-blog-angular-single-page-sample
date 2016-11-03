@@ -1,0 +1,34 @@
+app.controller('PostsCtrl', ['$scope', 'PostResource', '$uibModal', 'UserService', function($scope, PostResource, $uibModal, UserService){
+  $scope.postModal = function (mode, post, index) {
+    var modalInstance = $uibModal.open({
+      templateUrl: '<%= asset_path("modals/post_show_new_edit_modal.html") %>',
+      controller: 'PostShowNewEditModalInstanceCtrl',
+      resolve: {
+        params: function () {
+          return {
+            post: post,
+            mode: mode
+          };
+        }
+      }
+    });
+
+    modalInstance.result.then(function(post){
+      if (index && index >= 0) {
+        $scope.posts.splice(index, 1, post);
+      } else {
+        $scope.posts.push(post);
+      }
+    });
+  };
+
+  var init = function () {
+    $scope.user = UserService.user;
+
+    PostResource.api.query(function(resp){
+      $scope.posts = resp;
+    });
+  };
+
+  init();
+}]);
